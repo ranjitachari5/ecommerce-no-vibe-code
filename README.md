@@ -1,0 +1,2 @@
+# ecommerce-no-vibe-code
+
