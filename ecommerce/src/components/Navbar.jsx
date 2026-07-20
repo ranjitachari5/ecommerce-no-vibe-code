@@ -1,43 +1,57 @@
-
 import {
+  Menu,
   Search,
   User,
   CircleUserRound,
   Heart,
   ShoppingCart,
 } from "lucide-react";
+import { useState } from "react";
+const links = ["New", "Men", "Women", "Streetwear", "Sale"];
+const icons = [
+  <Search />,
+  <User />,
+  <CircleUserRound />,
+  <Heart />,
+  <ShoppingCart />,
+];
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <nav>
-        <div className="p-3 flex items-center md:flex">
-          <p className="font-serif p-4 text-5xl ml-6 mr-auto sm:flex">Urban Echo</p>
-          <ul className="sm-flex font-serif text-2xl gap-5 flex ml-60  space-x-4">
-            <a href="/" className=" cursor-pointer hover:text-blue-600 transition-all duration-200">
-              <li>New</li>
-            </a>
-            <a href="/" className="cursor-pointer hover:text-blue-600 transition-all duration-200">
-              <li>Men</li>
-            </a>
-            <a href="/" className="cursor-pointer hover:text-blue-600 transition-all duration-200">
-              <li>Woman</li>
-            </a>
-            <a href="/" className="cursor-pointer hover:text-blue-600  transition-all duration-200">
-              <li>Streetwear</li>
-            </a>
-            <a href="/" className="cursor-pointer hover:text-blue-600  transition-all duration-200">
-              <li>Sale</li>
-            </a>
-          </ul>
-
-          <div className="ml-auto flex items-center gap-5 text-2xl mr-6">
-            <a href="/" className="cursor-pointer hover:text-blue-500 transition-colors duration-200"><Search/></a>
-            <a href="/" className="cursor-pointer hover:text-blue-500 transition-colors duration-200"><User /></a>
-            <a href="/" className="cursor-pointer hover:text-blue-500 transition-colors duration-200"><CircleUserRound /></a>
-            <a href="/" className="cursor-pointer hover:text-blue-500 transition-colors duration-200"><Heart /></a>
-           <a href="/" className="cursor-pointer hover:text-blue-500 transition-colors duration-200"><ShoppingCart /></a>
-          </div>
+    
+      <nav className="flex font-serif">
+        <div className="flex items-center">
+          <Menu className="block md:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)} />
+          <p className=" text-3xl text-left p-5 md:text-7xl ">Urban Echo</p>
         </div>
+        <div className="flex justify-center items-center gap-10">
+          <div>
+            <ul className="hidden md:flex gap-3 text-3xl md:pl-20  md:gap-5">
+              {links.map((link) => (
+                <li key={link}>
+                  <a
+                    href="/"
+                    className="hover:text-blue-600 transition-colors duration-200"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className=" flex gap-3 pl-20  md:gap-5 ">
+            {icons.map((icon) => (
+              <a 
+                href="/"
+                className="cursor-pointer hover:text-blue-500 transition-colors duration-200"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
+          </div>
       </nav>
     </>
   );

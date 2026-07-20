@@ -1,12 +1,10 @@
-import banner from "../assets/banner.jpg"
-function Banner(){
+import banner from "../assets/banner.jpg";
 
-    return(
-        <>
-       <div className="w-full">
-        <img className="object-cover" src={banner}></img>
-        </div>
-        </>
-    );
+function Banner() {
+  return (
+    <div className="w-full aspect-auto">
+      <img className="w-full h-full object-cover" src={banner} alt="Banner" />
+    </div>
+  );
 }
 export default Banner;
