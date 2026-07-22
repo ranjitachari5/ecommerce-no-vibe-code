@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { products } from "../productDetail";
+import ProductGrid from "../components/ProductGrid";
 function Streetwear(){
+    const streetwear=products.filter((item)=>item.category.includes("streetwear"));
     return(
     <>
-    <div>Streetwear</div>
-    
+    <ProductGrid items={streetwear}/>
     </>
     );
 }

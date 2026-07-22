@@ -32,16 +32,16 @@ const icons=[
             className="block md:hidden cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           />
-          <p className=" text-5xl text-left p-3 md:text-6xl md:text-center  "style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)"}}>Urban Echo</p>
+          <p className=" text-3xl font-bold  p-3 md:text-5xl md:text-center ">Urban Echo</p>
         </div>
         <div className="flex justify-center items-center gap-10">
           <div>
-            <ul className="hidden md:flex gap-3 text-3xl md:pl-20 md:gap-8">
+            <ul className="hidden  md:flex gap-3 text-3xl md:pl-20 md:gap-8">
               {links.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="cursor-pointer hover:text-blue-600 transition-colors duration-200"
+                    className="cursor-pointer font-extralight hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.name}
                   </Link>

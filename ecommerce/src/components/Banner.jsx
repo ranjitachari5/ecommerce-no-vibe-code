@@ -2,8 +2,8 @@ import banner from "../assets/banner.jpg";
 
 function Banner() {
   return (
-    <div className="w-full aspect-auto">
-      <img className="w-full h-full object-cover" src={banner} alt="Banner" />
+    <div className="w-full h-full cursor-pointer ">
+      <img className="" src={banner} alt="Banner" />
     </div>
   );
 }
